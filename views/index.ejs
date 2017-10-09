@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List of Animals</title>
+</head>
+<body>   
+    <div>        
+        <h4>List of All Animals</h4>
+        <% for (var i in animals){ %>
+            <p>Animal Name: <%= animals[i].name %> &nbsp; <a href="/animal/edit/<%= animals[i]._id %>" style="text-decoration:none">Edit</a> &nbsp; <a href="/animal/destroy/<%= animals[i]._id %>" style="text-decoration:none">Delete</a></p>
+            <% } %>             
+    </div>
+    <br>
+    <form action="/animal/new" method="post">
+        Animal Name: <input type="text" name="name"> <input type="submit">
+    </form>
+    
+</body>
+</html>
